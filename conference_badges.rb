@@ -24,10 +24,11 @@ def assign_rooms(attendees)
 end
 
 def printer(attendees)
-
   attendees.each_with_index do |person, x|
     batch_badge_creator(attendees)
     assign_rooms(attendees)
     binding.pry
   end
 end
+
+printer(attendees)
