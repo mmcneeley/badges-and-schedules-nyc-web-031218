@@ -1,3 +1,4 @@
+require "pry"
 attendees = ["Edsger", "Ada", "Charles", "Alan", "Grace", "Linus", "Matz"]
 
 def badge_maker(name)
@@ -23,10 +24,10 @@ def assign_rooms(attendees)
 end
 
 def printer(attendees)
-  batch_badge_creator(attendees)
-  assign_rooms(attendees)
+
   attendees.each_with_index do |person, x|
-    puts badge_messages[x]
-    puts room_assignments[x]
+    batch_badge_creator(attendees)
+    assign_rooms(attendees)
+    binding.pry
   end
 end
