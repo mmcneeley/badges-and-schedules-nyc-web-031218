@@ -24,9 +24,11 @@ def assign_rooms(attendees)
 end
 
 def printer(attendees)
+  badge_messages = batch_badge_creator(attendees)
+  room_assignments = assign_rooms(attendees)
   attendees.each_with_index do |person, x|
-    batch_badge_creator(attendees)[x]
-    assign_rooms(attendees)[x]
+    puts badge_messages[x]
+    puts room_assignments[x]
     #binding.pry
   end
 end
